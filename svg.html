@@ -16,19 +16,22 @@ var tr = document.getElementById("a4354");
 //var svgDoc = tr.contentDocument;
 //var svgItem = svgDoc.getElementById("a4354");
 tr.onClick = dest;
+document.getElementById("intermapcont").innerHTML="Testing";
+//$('#intermapcont').load('Attiki-sterea ellada.svg');
 }
 
 function dest()
 {
- alert("Color of the Rectangle is: ");
+	alert("Color of the Rectangle is: ");
 }
 
 </script>
 
 </head>
-<body onload="kati()" >
+<body >
 <button onclick="kati()" value="Kati">KATIIII</button>
 <!-- <object type="image/svg+xml" id="papa" data="map.svg" /> -->
+<div id="intermapcont">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -904,7 +907,6 @@ function dest()
          class="st0"
          points="396.7,385.2 401.2,381.3 394.1,383.2 387.3,386.5 383.4,387.8 377,391.9 354.5,398.6 347.2,399.6      339.8,399.3 330.7,398.4 321.7,396.6 321,402.8 318.7,408.3 313.4,409.5 311.2,409 309.9,409.4 307.5,408.9 303.1,410.3 299.1,414      294.6,416.4 291,414.9 291.7,420.8 296.3,430.4 298,432.9 300.5,434.1 309.6,437.2 312.3,437.3 318.2,436.5 320.9,438.2      322.2,441.3 324.5,441.6 325.1,440.5 325.1,438.3 327.2,435.9 330.1,434.6 333.2,434.5 339,433.4 344.7,431.6 349.5,428.6      358.7,419.4 362,419.1 365.1,419.6 370.6,419.3 375.3,418.5 374.4,416.2 373.8,415.5 373.6,414.1 370.5,410.5 369.3,407.1 371,402      "
          id="polygon4374" /></g></a></svg>
-
-
+</div>
 </body>
 </html>
