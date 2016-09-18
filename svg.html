@@ -1,6 +1,5 @@
 <html>
 <head>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="svginnerhtml.js"></script>
 <script>
@@ -10,35 +9,42 @@
                   document.getElementById("papa").getAttributeNS(null,"fill"));
                }*/
 
-/** No need for the function kati () 		   
-function kati()
-{
-var tr = document.getElementById("a4354");
-//var svgDoc = tr.contentDocument;
-//var svgItem = svgDoc.getElementById("a4354");
-tr.onClick = dest;
-document.getElementById("intermapcont").innerHTML="Testing";
-//$('#intermapcont').load('Attiki-sterea ellada.svg');
-}*/	
+/** dest() function return the id of the element V--- This WORKS----V  */
+var stringData; /*ajax doesnt work without server*/
 
-/** dest() function return the id of the element V--- This WORKS----V */		
+        $.ajax({
+            url : "Attiki-sterea-ellada.svg",
+			dataType: "text",
+            success : function (data) {
+               stringData = data;
+            }})
+			
 function dest(clicked_id)
 {
+
 	alert("Color of the Rectangle is: "+clicked_id);
 	/** document.getElementById("intermapcont").innerHTML = "Testing"; */
-	document.getElementById("intermapcont").innerHTML =  "<svg><rect width="100" height="60" fill="green" />'
+	document.getElementById("intermapcont").innerHTML = stringData; /**'<svg><rect width="100" height="60" fill="green" />'
                         + '<circle cx="10" cy="19" r="20" fill="blue"></circle>'
                         + '<text x="15" y="20" fill="white">hello world</text>'
-                        + '<g transform="translate(0, 70)"><rect width="100" height="20" fill="yellow" /></g></svg>";
+                        + '<g transform="translate(0, 70)"><rect width="100" height="20" fill="yellow" /></g></svg>';
+*/
 }
+
 /** https://css-tricks.com/svg-use-external-source/ */
+
+function back()
+{
+
+}
+
 </script>
 
 </head>
 <body >
-<button onclick="kati()" value="Kati">KATIIII</button>
+<button onclick="back()" >Back</button>
 <!-- <object type="image/svg+xml" id="papa" data="map.svg" /> -->
-<div id="intermapcont">
+<div id="intermapcont" style="width: 400px; height: 400px;">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
